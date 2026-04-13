@@ -1,0 +1,13 @@
+{
+  "name": "Joke API",
+  "version": "1.0.0",
+  "slug": "joke_api",
+  "description": "Python Joke API with SQLite + UI",
+  "startup": "services",
+  "boot": "auto",
+  "ingress": true,
+  "ingress_port": 8091,
+  "ports": {
+    "8091/tcp": 8091
+  }
+}
