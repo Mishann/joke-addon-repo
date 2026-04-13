@@ -1,5 +1,5 @@
 async function load() {
-  const r = await fetch('/api/all');
+  const r = await fetch('api/all');
   const data = await r.json();
   const list = document.getElementById('list');
   const empty = document.getElementById('empty');
@@ -38,21 +38,21 @@ async function addJoke() {
   const text = input.value.trim();
   if (!text) { showToast('Write a joke first 😅'); return; }
 
-  await fetch('/api/joke', { method: 'POST', body: new URLSearchParams({ text }) });
+  await fetch('api/joke', { method: 'POST', body: new URLSearchParams({ text }) });
   input.value = '';
   showToast('Joke added! 🎉');
   load();
 }
 
 async function del(id) {
-  await fetch('/api/joke/' + id, { method: 'DELETE' });
+  await fetch('api/joke/' + id, { method: 'DELETE' });
   showToast('Deleted.');
   load();
 }
 
 async function clearAll() {
   if (!confirm('Delete ALL jokes? This cannot be undone.')) return;
-  await fetch('/api/clear', { method: 'DELETE' });
+  await fetch('api/clear', { method: 'DELETE' });
   showToast('All jokes cleared.');
   load();
 }
@@ -63,7 +63,7 @@ async function importFile() {
 
   const fd = new FormData();
   fd.append('file', f);
-  await fetch('/api/import', { method: 'POST', body: fd });
+  await fetch('api/import', { method: 'POST', body: fd });
   document.getElementById('fileName').textContent = 'Choose file…';
   document.getElementById('file').value = '';
   showToast('Imported! 📥');
@@ -71,7 +71,7 @@ async function importFile() {
 }
 
 async function shuffleView() {
-  const r = await fetch('/api/joke');
+  const r = await fetch('api/joke');
   const data = await r.json();
   if (data.joke) showToast('🎲 ' + data.joke, 4000);
 }
