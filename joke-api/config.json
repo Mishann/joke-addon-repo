@@ -1,6 +1,6 @@
 {
   "name": "Joke API",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "slug": "joke_api",
   "description": "Python Joke API with SQLite + UI",
   "startup": "services",
