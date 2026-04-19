@@ -1,6 +1,6 @@
 name: "Joke API"
 description: "A joke API service with a web UI — serves random jokes from a SQLite database."
-version: "2.0.0"
+version: "2.0.1"
 slug: "joke_api"
 init: false
 arch:
