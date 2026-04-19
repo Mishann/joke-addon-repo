@@ -34,7 +34,7 @@ public class JokeController {
         service.clearAudioDir();
         String joke = service.getRandomJoke();
         String filename = service.generateAudio(joke);
-        return Map.of("url", "/api/audio/" + filename);
+        return Map.of("url", "api/audio/" + filename);
     }
 
     @GetMapping("/audio/{filename}")
