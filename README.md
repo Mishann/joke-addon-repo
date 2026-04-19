@@ -4,7 +4,7 @@ A Home Assistant add-on that serves random Ukrainian jokes with a web UI, SQLite
 Built with **Java 25 + Spring Boot 3**, packaged as a Docker container.
 
 ---
-![img.png](img.png)
+![img_1.png](img_1.png)
 
 ## Features
 
