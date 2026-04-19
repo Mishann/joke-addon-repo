@@ -37,7 +37,7 @@ rest_command: !include rest_commands.yaml
 **`rest_commands.yaml`** (place in `/config/`):
 ```yaml
 get_joke_audio:
-  url: "http://joke_api:8080/api/joke/audio"
+  url: "http://homeassistant.local:8091/api/joke/audio"
   method: GET
 ```
 
