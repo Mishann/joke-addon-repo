@@ -8,6 +8,7 @@ RUN mvn package -DskipTests -q
 FROM eclipse-temurin:25-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
+RUN mkdir -p /data /data/audio
 ENV SERVER_PORT=8080
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]

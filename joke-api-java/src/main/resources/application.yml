@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:sqlite:${DB_PATH:/jokes.db}
+    url: jdbc:sqlite:${DB_PATH:/data/jokes.db}
     driver-class-name: org.sqlite.JDBC
   jpa:
     database-platform: org.hibernate.community.dialect.SQLiteDialect
