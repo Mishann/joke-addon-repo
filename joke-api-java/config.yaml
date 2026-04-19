@@ -1,0 +1,19 @@
+name: "Joke API"
+description: "A joke API service with a web UI — serves random jokes from a SQLite database."
+version: "2.0.0"
+slug: "joke_api"
+init: false
+arch:
+  - amd64
+  - aarch64
+ingress: true
+ingress_port: 8080
+ports:
+  8080/tcp: 8091
+ports_description:
+  8080/tcp: "Web UI"
+panel_icon: "mdi:emoticon-happy-outline"
+map:
+  - data:rw
+options: {}
+schema: {}
