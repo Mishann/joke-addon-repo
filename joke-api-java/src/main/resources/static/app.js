@@ -70,6 +70,33 @@ async function importFile() {
   load();
 }
 
+async function playAudio() {
+  const btn = document.getElementById('audioBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Loading…';
+
+  try {
+    const r = await fetch('api/joke/audio');
+    if (!r.ok) throw new Error('Audio generation failed');
+    const data = await r.json();
+    const audio = new Audio(data.url);
+    audio.play();
+    audio.addEventListener('ended', () => {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="bi bi-volume-up me-1"></i>Play';
+    });
+    audio.addEventListener('error', () => {
+      showToast('Audio playback error.');
+      btn.disabled = false;
+      btn.innerHTML = '<i class="bi bi-volume-up me-1"></i>Play';
+    });
+  } catch {
+    showToast('Could not load audio.');
+    btn.disabled = false;
+    btn.innerHTML = '<i class="bi bi-volume-up me-1"></i>Play';
+  }
+}
+
 async function shuffleView() {
   const r = await fetch('api/joke');
   const data = await r.json();

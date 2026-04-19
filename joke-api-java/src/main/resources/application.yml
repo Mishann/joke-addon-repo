@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:${DB_PATH:/jokes.db}
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+joke:
+  audio-dir: ${AUDIO_DIR:/data/audio}
